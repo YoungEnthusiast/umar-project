@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class FirstTerm(models.Model):
     session = models.ForeignKey('management.Session', on_delete = models.SET_NULL, default=1, null=True, related_name="nursery_session")
-    student = models.OneToOneField('records.Student', on_delete = models.SET_NULL, unique = True, null=True, related_name="nursery_student")
+    pupil = models.OneToOneField('records.pupil', on_delete = models.SET_NULL, unique = True, null=True, related_name="nursery_pupil")
     school_fees = models.BooleanField(max_length=5, default = False)
     quran_ca = models.IntegerField(blank=True, default = 0, verbose_name="القرآن (الإختبار)")
     tajweed_ca = models.IntegerField(blank=True, default = 0, verbose_name="التجويد (الإختبار)")
@@ -52,7 +52,7 @@ class FirstTerm(models.Model):
             return str(self.id)
 
     class Meta:
-        ordering = ('student__user__username',)
+        ordering = ('pupil__user__username',)
         verbose_name = "First Term Score"
         verbose_name_plural = "First Term Scores"
 

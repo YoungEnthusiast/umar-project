@@ -26,7 +26,7 @@ urlpatterns = [
     path('', include('news.urls')),
     path('', include('users.urls')),
     path('', include('records.urls')),
-    # path('', include('pre_basic.urls')),
+    path('', include('nursery.urls')),
     # path('', include('basic.urls')),
     path('', include('secondary.urls')),
     # path('', include('arabiyyah.urls')),
