@@ -13,7 +13,7 @@
     {% include 'partials/_alerts.html' %}
 
     {% if pupils_page_obj %}
-    <h4 class="text-center text-warning">Search Pupils by One or Many Fields</h4>
+    <h4 class="text-center text-orange">Search Pupils by One or Many Fields</h4>
     <div class="col-md-12">
       <div class="box-element bg-warning" id="form-wrapper">
         <form method="get" class="form-inline text-white">
@@ -32,11 +32,11 @@
         <div class="col-md-12">
           {% if total_pupils > 1 %}
           <div class="form-group col-md-12">
-            <h3 class="form-group text-warning">Total Pupils: {{total_pupils}}</h3>
+            <h3 class="form-group text-orange">Total Pupils: {{total_pupils}}</h3>
           </div>
           {% else %}
           <div class="form-group col-md-12">
-            <h3 class="form-group text-warning">Total Pupil: {{total_pupils}}</h3>
+            <h3 class="form-group text-orange">Total Pupil: {{total_pupils}}</h3>
           </div>
           {% endif %}
           <div class="table-responsive">
@@ -63,7 +63,7 @@
                   {% endif %}
                   <td>{{pupil.classe}}</td>
                   <td>{{pupil.phone_number}}</td>
-                  <td class="text-center"><a href="{% url 'show_pupil' pupil.id %}"><button type="button" class="btn btn-sm btn-primary text-warning"><strong>View All Details</strong></button></a></td>
+                  <td class="text-center"><a href="{% url 'show_pupil' pupil.id %}"><button type="button" class="btn btn-sm btn-primary text-orange"><strong>View All Details</strong></button></a></td>
                 </tr>
               {% endfor %}
               </tbody>

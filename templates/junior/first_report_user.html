@@ -76,7 +76,7 @@
             </thead>
             <tbody>
               <tr class="table-light">
-                <td class="text-light_blue">1</td>
+                <td class="text-light_blue text-center">1</td>
                 <td class="text-light_blue text-center"><strong> القرآن الكريم <br> AL-QURAN</strong></td>
                 <td class="text-light_blue text-center"><strong>{{each.quran_ca}}</strong></td>
                 <td class="text-light_blue text-center"><strong>{{each.quran_exam}}</strong></td>
@@ -84,7 +84,7 @@
                 <td class="text-light_blue text-center"><strong>{{each.grade_quran}}</strong></td>
               </tr>
               <tr class="table-light">
-                <td class="text-light_blue">2</td>
+                <td class="text-light_blue text-center">2</td>
                 <td class="text-light_blue text-center"><strong>التجويد <br> AT-TAJWEED </strong></td>
                 <td class="text-light_blue text-center"><strong>{{each.tajweed_ca}}</strong></td>
                 <td class="text-light_blue text-center"><strong>{{each.tajweed_exam}}</strong></td>
@@ -92,7 +92,23 @@
                 <td class="text-light_blue text-center"><strong>{{each.grade_tajweed}}</strong></td>
               </tr>
               <tr class="table-light">
-                <td class="text-light_blue">3</td>
+                <td class="text-light_blue text-center">3</td>
+                <td class="text-light_blue text-center"><strong>المطالعة <br> AL-MUTAALAAH</strong></td>
+                <td class="text-light_blue text-center"><strong>{{each.mutoolaah_ca}}</strong></td>
+                <td class="text-light_blue text-center"><strong>{{each.mutoolaah_exam}}</strong></td>
+                <td class="text-light_blue text-center"><strong>{{each.mutoolaah_tot}}</strong></td>
+                <td class="text-light_blue text-center"><strong>{{each.grade_mutoolaah}}</strong></td>
+              </tr>
+              <tr class="table-light">
+                <td class="text-light_blue text-center">4</td>
+                <td class="text-light_blue text-center"><strong>العربية <br> AL-ARABIYYAH</strong></td>
+                <td class="text-light_blue text-center"><strong>{{each.arabiyyah_ca}}</strong></td>
+                <td class="text-light_blue text-center"><strong>{{each.arabiyyah_exam}}</strong></td>
+                <td class="text-light_blue text-center"><strong>{{each.arabiyyah_tot}}</strong></td>
+                <td class="text-light_blue text-center"><strong>{{each.grade_arabiyyah}}</strong></td>
+              </tr>
+              <tr class="table-light">
+                <td class="text-light_blue text-center">5</td>
                 <td class="text-light_blue text-center"><strong>النحو <br> AN-NAHW</strong></td>
                 <td class="text-light_blue text-center"><strong>{{each.nahw_ca}}</strong></td>
                 <td class="text-light_blue text-center"><strong>{{each.nahw_exam}}</strong></td>
@@ -100,31 +116,7 @@
                 <td class="text-light_blue text-center"><strong>{{each.grade_nahw}}</strong></td>
               </tr>
               <tr class="table-light">
-                <td class="text-light_blue">4</td>
-                <td class="text-light_blue text-center"><strong>الصرف <br> AS-SARF</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.sorf_ca}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.sorf_exam}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.sorf_tot}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.grade_sorf}}</strong></td>
-              </tr>
-              <tr class="table-light">
-                <td class="text-light_blue">5</td>
-                <td class="text-light_blue text-center"><strong>علوم القرآن <br> ULUUMUL-QURAN</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.uluum_ulquran_ca}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.uluum_ulquran_exam}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.uluum_ulquran_tot}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.grade_uluum_ulquran}}</strong></td>
-              </tr>
-              <tr class="table-light">
-                <td class="text-light_blue">6</td>
-                <td class="text-light_blue text-center"><strong>البلاغة <br> AL-BALAAGAH</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.balaagah_ca}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.balaagah_exam}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.balaagah_tot}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.grade_balaagah}}</strong></td>
-              </tr>
-              <tr class="table-light">
-                <td class="text-light_blue">7</td>
+                <td class="text-light_blue text-center">6</td>
                 <td class="text-light_blue text-center"><strong> التوحيد <br> AT-TAUHEED</strong></td>
                 <td class="text-light_blue text-center"><strong>{{each.tawheed_ca}}</strong></td>
                 <td class="text-light_blue text-center"><strong>{{each.tawheed_exam}}</strong></td>
@@ -132,15 +124,7 @@
                 <td class="text-light_blue text-center"><strong>{{each.grade_tawheed}}</strong></td>
               </tr>
               <tr class="table-light">
-                <td class="text-light_blue">8</td>
-                <td class="text-light_blue text-center"><strong>الفرائض <br> AL-FARAAID</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.farooid_ca}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.farooid_exam}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.farooid_tot}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.grade_farooid}}</strong></td>
-              </tr>
-              <tr class="table-light">
-                <td class="text-light_blue">9</td>
+                <td class="text-light_blue text-center">7</td>
                 <td class="text-light_blue text-center"><strong> الفقه <br> AL-FIQH</strong></td>
                 <td class="text-light_blue text-center"><strong>{{each.fiqh_ca}}</strong></td>
                 <td class="text-light_blue text-center"><strong>{{each.fiqh_exam}}</strong></td>
@@ -148,52 +132,20 @@
                 <td class="text-light_blue text-center"><strong>{{each.grade_fiqh}}</strong></td>
               </tr>
               <tr class="table-light">
-                <td class="text-light_blue">10</td>
-                <td class="text-light_blue text-center"><strong>التاريخ <br> AT-TAAREEKH</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.taareekh_ca}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.taareekh_exam}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.taareekh_tot}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.grade_taareekh}}</strong></td>
+                <td class="text-light_blue text-center">8</td>
+                <td class="text-light_blue text-center"><strong>السيرة <br> AS-SEERAH</strong></td>
+                <td class="text-light_blue text-center"><strong>{{each.seerah_ca}}</strong></td>
+                <td class="text-light_blue text-center"><strong>{{each.seerah_exam}}</strong></td>
+                <td class="text-light_blue text-center"><strong>{{each.seerah_tot}}</strong></td>
+                <td class="text-light_blue text-center"><strong>{{each.grade_seerah}}</strong></td>
               </tr>
               <tr class="table-light">
-                <td class="text-light_blue">11</td>
+                <td class="text-light_blue text-center">9</td>
                 <td class="text-light_blue text-center"><strong> الحديث <br> AL-HADEETH</strong></td>
                 <td class="text-light_blue text-center"><strong>{{each.hadeeth_ca}}</strong></td>
                 <td class="text-light_blue text-center"><strong>{{each.hadeeth_exam}}</strong></td>
                 <td class="text-light_blue text-center"><strong>{{each.hadeeth_tot}}</strong></td>
                 <td class="text-light_blue text-center"><strong>{{each.grade_hadeeth}}</strong></td>
-              </tr>
-              <tr class="table-light">
-                <td class="text-light_blue">12</td>
-                <td class="text-light_blue text-center"><strong>العروض <br> AL-ARUUD</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.aruud_ca}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.aruud_exam}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.aruud_tot}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.grade_aruud}}</strong></td>
-              </tr>
-              <tr class="table-light">
-                <td class="text-light_blue">13</td>
-                <td class="text-light_blue text-center"><strong>المنطقة <br> AL-MANTIQAH</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.mantiqoh_ca}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.mantiqoh_exam}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.mantiqoh_tot}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.grade_mantiqoh}}</strong></td>
-              </tr>
-              <tr class="table-light">
-                <td class="text-light_blue">14</td>
-                <td class="text-light_blue text-center"><strong>التفسير <br> AT-TAFSEER</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.tafseer_ca}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.tafseer_exam}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.tafseer_tot}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.grade_tafseer}}</strong></td>
-              </tr>
-              <tr class="table-light">
-                <td class="text-light_blue">15</td>
-                <td class="text-light_blue text-center"><strong>مصطلح الحديث <br> MUSTALAHUL-HADEETH</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.mustolah_ulhadeeth_ca}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.mustolah_ulhadeeth_exam}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.mustolah_ulhadeeth_tot}}</strong></td>
-                <td class="text-light_blue text-center"><strong>{{each.grade_mustolah_ulhadeeth}}</strong></td>
               </tr>
             </tbody>
           </table>

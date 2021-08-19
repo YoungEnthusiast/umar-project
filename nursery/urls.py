@@ -3,9 +3,9 @@ from . import views
 
 urlpatterns = [
     path('staff/nursery/first-term', views.showFirsts, name='nursery_firsts'),
-    #path('parents/nursery/first-term', views.showFirstsUser, name='nursery_firsts_user'),
+    path('parents/nursery/first-term', views.showFirstsUser, name='nursery_firsts_user'),
     path('staff/nursery/first-term/<int:pk>/', views.showFirst, name='nursery_show_first'),
-    # path('parents/nursery/first-term/<int:pk>/', views.showFirstUser, name='nursery_show_first_user'),
+    path('parents/nursery/first-term/<int:pk>/', views.showFirstUser, name='nursery_show_first_user'),
     path('staff/nursery/first-term/update/<int:id>', views.updateFirsts, name='nursery_firsts_update'),
     path('staff/nursery/first-term/add-scores', views.addFirst, name='nursery_first'),
     # path('staff/nursery/second-term', views.showSeconds, name='nursery_seconds'),

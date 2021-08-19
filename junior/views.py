@@ -22,14 +22,14 @@ def showFirsts(request):
     context['firsts_page_obj'] = firsts_page_obj
     total_firsts = filtered_firsts.qs.count()
     context['total_firsts'] = total_firsts
-    return render(request, 'nursery/first_list.html', context=context)
+    return render(request, 'junior/first_list.html', context=context)
 
 @login_required
 def showFirstsUser(request):
     context = {}
     filtered_firsts = FirstFilter(
         request.GET,
-        queryset = FirstTerm.objects.filter(pupil__user=request.user, school_fees=True)
+        queryset = FirstTerm.objects.filter(student__user=request.user, school_fees=True)
     )
     context['filtered_firsts'] = filtered_firsts
     paginated_filtered_firsts = Paginator(filtered_firsts.qs, 10)
@@ -38,7 +38,7 @@ def showFirstsUser(request):
     context['firsts_page_obj'] = firsts_page_obj
     total_firsts = filtered_firsts.qs.count()
     context['total_firsts'] = total_firsts
-    return render(request, 'nursery/first_list_user.html', context=context)
+    return render(request, 'junior/first_list_user.html', context=context)
 
 @login_required
 def updateFirsts(request, id):
@@ -51,13 +51,13 @@ def updateFirsts(request, id):
             teacher = request.user
             teacher_name = teacher.last_name
             session = form.cleaned_data.get('session')
-            pupil = form.cleaned_data.get('pupil')
+            student = form.cleaned_data.get('student')
             teacher_comment = form.cleaned_data.get('teacher_comment')
             head_comment = form.cleaned_data.get('head_comment')
-            pupil_first_name = pupil.user.first_name
-            pupil_last_name = pupil.user.last_name
-            pupil_email = pupil.user.email
-            reg = FirstTerm.objects.get(pupil=pupil)
+            student_first_name = student.user.first_name
+            student_last_name = student.user.last_name
+            student_email = student.user.email
+            reg = FirstTerm.objects.get(student=student)
             quran_tot = reg.quran_ca + reg.quran_exam
             tajweed_tot = reg.tajweed_ca + reg.tajweed_exam
             mutoolaah_tot = reg.mutoolaah_ca + reg.mutoolaah_exam
@@ -67,11 +67,9 @@ def updateFirsts(request, id):
             fiqh_tot = reg.fiqh_ca + reg.fiqh_exam
             seeroh_tot = reg.seeroh_ca + reg.seeroh_exam
             hadeeth_tot = reg.hadeeth_ca + reg.hadeeth_exam
-            imlaa_tot = reg.imlaa_ca + reg.imlaa_exam
-            khot_tot = reg.khot_ca + reg.khot_exam
             cumulative = (quran_tot + tajweed_tot + mutoolaah_tot
             + arabiyyah_tot + nahw_tot + tawheed_tot + fiqh_tot
-            + seeroh_tot + hadeeth_tot + imlaa_tot + khot_tot
+            + seeroh_tot + hadeeth_tot
             )
             reg.quran_tot = quran_tot
             reg.tajweed_tot = tajweed_tot
@@ -82,23 +80,21 @@ def updateFirsts(request, id):
             reg.fiqh_tot = fiqh_tot
             reg.seeroh_tot = seeroh_tot
             reg.hadeeth_tot = hadeeth_tot
-            reg.imlaa_tot = imlaa_tot
-            reg.khot_tot = khot_tot
             reg.cumulative = cumulative
             reg.teacher_comment = teacher_comment
             reg.head_comment = head_comment
             reg.save()
             send_mail(
                 '[' + str(session) + '] SCORES UPDATE',
-                'New Scores have been recorded. Current Total: ' + str(cumulative) + "Teacher's Name: " + str(teacher_name) + "pupil: " + str(pupil) + "pupil's Name: " + str(pupil_first_name) + str(pupil_last_name),
+                'New Scores have been recorded. Current Total: ' + str(cumulative) + "Teacher's Name: " + str(teacher_name) + "student: " + str(student) + "student's Name: " + str(student_first_name) + str(student_last_name),
                 'yustaoab@gmail.com',
-                [pupil_email],
+                [student_email],
                 fail_silently=False,
                 #html_message = render_to_string('treatment/doc_lab_email.html', {'appointment_Id': str(appointment_Id), 'patient_id': str(patient_id), 'doctor_name': str(doctor_name), 'lab_technician_name': str(lab_technician_name), 'appointment_Id': str(appointment_Id)})
             )
-            messages.success(request, str(pupil_first_name) + "'s score has been modified successfully")
-            return redirect('nursery_firsts')
-    return render(request, 'nursery/first_form_update.html', {'form': form, 'first': first})
+            messages.success(request, str(student_first_name) + "'s score has been modified successfully")
+            return redirect('junior_firsts')
+    return render(request, 'junior/first_form_update.html', {'form': form, 'first': first})
 
 @login_required
 def addFirst(request, **kwargs):
@@ -110,13 +106,13 @@ def addFirst(request, **kwargs):
             teacher = request.user
             teacher_name = teacher.last_name
             session = form.cleaned_data.get('session')
-            pupil = form.cleaned_data.get('pupil')
+            student = form.cleaned_data.get('student')
             teacher_comment = form.cleaned_data.get('teacher_comment')
             head_comment = form.cleaned_data.get('head_comment')
-            pupil_first_name = pupil.user.first_name
-            pupil_last_name = pupil.user.last_name
-            pupil_email = pupil.user.email
-            reg = FirstTerm.objects.get(pupil=pupil)
+            student_first_name = student.user.first_name
+            student_last_name = student.user.last_name
+            student_email = student.user.email
+            reg = FirstTerm.objects.get(student=student)
             quran_tot = reg.quran_ca + reg.quran_exam
             tajweed_tot = reg.tajweed_ca + reg.tajweed_exam
             mutoolaah_tot = reg.mutoolaah_ca + reg.mutoolaah_exam
@@ -126,11 +122,9 @@ def addFirst(request, **kwargs):
             fiqh_tot = reg.fiqh_ca + reg.fiqh_exam
             seeroh_tot = reg.seeroh_ca + reg.seeroh_exam
             hadeeth_tot = reg.hadeeth_ca + reg.hadeeth_exam
-            imlaa_tot = reg.imlaa_ca + reg.imlaa_exam
-            khot_tot = reg.khot_ca + reg.khot_exam
             cumulative = (quran_tot + tajweed_tot + mutoolaah_tot
             + arabiyyah_tot + nahw_tot + tawheed_tot + fiqh_tot
-            + seeroh_tot + hadeeth_tot + imlaa_tot + khot_tot
+            + seeroh_tot + hadeeth_tot
             )
             reg.quran_tot = quran_tot
             reg.tajweed_tot = tajweed_tot
@@ -141,39 +135,37 @@ def addFirst(request, **kwargs):
             reg.fiqh_tot = fiqh_tot
             reg.seeroh_tot = seeroh_tot
             reg.hadeeth_tot = hadeeth_tot
-            reg.imlaa_tot = imlaa_tot
-            reg.khot_tot = khot_tot
             reg.cumulative = cumulative
             reg.teacher_comment = teacher_comment
             reg.head_comment = head_comment
             reg.save()
             send_mail(
                 '[' + str(session) + '] SCORES UPDATE',
-                'New Scores have been recorded. Current Total: ' + str(cumulative) + "Teacher's Name: " + str(teacher_name) + "pupil: " + str(pupil) + "pupil's Name: " + str(pupil_first_name) + str(pupil_last_name),
+                'New Scores have been recorded. Current Total: ' + str(cumulative) + "Teacher's Name: " + str(teacher_name) + "student: " + str(student) + "student's Name: " + str(student_first_name) + str(student_last_name),
                 'yustaoab@gmail.com',
-                [pupil_email],
+                [student_email],
                 fail_silently=False,
                 #html_message = render_to_string('treatment/doc_lab_email.html', {'appointment_Id': str(appointment_Id), 'patient_id': str(patient_id), 'doctor_name': str(doctor_name), 'lab_technician_name': str(lab_technician_name), 'appointment_Id': str(appointment_Id)})
             )
-            messages.success(request, str(pupil_first_name) + "'s score has been added successfully")
-            return redirect('nursery_first')
+            messages.success(request, str(student_first_name) + "'s score has been added successfully")
+            return redirect('junior_first')
         else:
             messages.error(request, "Please review form input fields below")
-            #return redirect('nursery_first')
-    return render(request, 'nursery/first_form.html', {'form': form})
+            #return redirect('junior_first')
+    return render(request, 'junior/first_form.html', {'form': form})
 
 @login_required
 def showFirst(request, **kwargs):
     first = FirstTerm.objects.filter(id=kwargs['pk'])
     response_first = []
     for each in first:
-        class_pupils_count = FirstTerm.objects.filter(pupil__classe=each.pupil.classe).count()
-        class_pupils = FirstTerm.objects.filter(pupil__classe=each.pupil.classe)
+        class_students_count = FirstTerm.objects.filter(student__classe=each.student.classe).count()
+        class_students = FirstTerm.objects.filter(student__classe=each.student.classe)
 
         position = []
         pos = 0
-        for pupil in class_pupils:
-            position.append(pupil.cumulative)
+        for student in class_students:
+            position.append(student.cumulative)
             position.sort(reverse=True)
 
         for i in range(len(position)):
@@ -194,21 +186,21 @@ def showFirst(request, **kwargs):
                     pos = str(i + 1) + "th"
 
         response_first.append(each)
-    return render(request, 'nursery/first_report.html', {'first': response_first,
-        'class_pupils_count': class_pupils_count, 'position': position, 'pos': pos})
+    return render(request, 'junior/first_report.html', {'first': response_first,
+        'class_students_count': class_students_count, 'pos': pos})
 
 @login_required
 def showFirstUser(request, **kwargs):
     first = FirstTerm.objects.filter(id=kwargs['pk'])
     response_first = []
     for each in first:
-        class_pupils_count = FirstTerm.objects.filter(pupil__classe=each.pupil.classe).count()
-        class_pupils = FirstTerm.objects.filter(pupil__classe=each.pupil.classe)
+        class_students_count = FirstTerm.objects.filter(student__classe=each.student.classe).count()
+        class_students = FirstTerm.objects.filter(student__classe=each.student.classe)
 
         position = []
         pos = 0
-        for pupil in class_pupils:
-            position.append(pupil.cumulative)
+        for student in class_students:
+            position.append(student.cumulative)
             position.sort(reverse=True)
 
         for i in range(len(position)):
@@ -229,5 +221,5 @@ def showFirstUser(request, **kwargs):
                     pos = str(i + 1) + "th"
 
         response_first.append(each)
-    return render(request, 'nursery/first_report_user.html', {'first': response_first,
-        'class_pupils_count': class_pupils_count, 'position': position, 'pos': pos})
+    return render(request, 'junior/first_report_user.html', {'first': response_first,
+        'class_students_count': class_students_count, 'pos': pos})

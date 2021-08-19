@@ -49,9 +49,9 @@ INSTALLED_APPS = [
     'staff',
     'news',
     'users',
-    # 'pre_basic',
+    'nursery',
     'management',
-    # 'basic',
+    'junior',
     'secondary',
 ]
 
