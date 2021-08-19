@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+  <title>{% if category %}{{ category.type }}{% else %}Audios{% endif %} | Umar bn l Khattob Centre for Qur'anic and Arabic Studies</title>
+{% endblock title %}
+
+{% block content %}
+
+{% load home_tags %}
+<section>
+  <div class="col-md-12">
+    <br>
+    {% include 'partials/_alerts.html' %}
+    {% if audios_page_obj %}
+    <div class="row text-center">
+      <div class="col-md-12">
+        <h4 class="text-center"><strong class="text-danger">Search Audios by One or Many Fields</strong></h4>
+        <div class="box-element bg-warning" id="form-wrapper">
+          <form method="get" class="form-inline text-dark">
+            {% for field in filtered_audios.form %}
+              <strong>{{field.label}}:</strong>&nbsp{{field}}&nbsp&nbsp
+            {% endfor %}
+            <input type="submit" class="btn btn-dark" value="Sort">
+          </form>
+        </div>
+          <br>
+      </div>
+      {% if total_audios > 1 %}
+      <div class="form-group col-md-12">
+        <h3 class="form-group text-danger">Total Audios: {{total_audios}}</h3>
+      </div>
+      {% else %}
+      <div class="form-group col-md-12">
+        <h3 class="form-group text-danger">Total Audio: {{total_audios}}</h3>
+      </div>
+      {% endif %}
+      {% for audio in audios_page_obj %}
+
+      <div class="col-md-4">
+        <div class="box-element product bg-primary">
+          <br>
+            <audio width="300" controls>
+              <source src="{{ audio.audio.url }}" type="audio/mp4">
+            </audio>
+          <br>
+          <strong class="text-warning">Category: {{audio.category}}</strong> <br>
+          <strong class="text-white">Title: {{ audio.title }}</strong><br>
+          <hr class="text-white">
+          <h6 class="text-white">Uploaded on <strong>{{audio.created}}</strong></h6>
+        </div>
+      </div>
+      {% endfor %}
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+    </div>
+  </div>
+  <br>
+  <nav aria-label="...">
+    <ul class="pagination justify-content-center">
+      <li class="page-item"><a class="page-link" href="{% my_url 1 'page' request.GET.urlencode %}" tabindex="-1" aria-disabled="true">First</a></li>
+      {% if audios_page_obj.has_previous %}
+        <li class="page-item"><a class="page-link" href="{% my_url audios_page_obj.previous_page_number 'page' request.GET.urlencode %}">{{audios_page_obj.previous_page_number}}</a></li>
+      {% endif %}
+      <li class="page-item active" aria-current="page"><a class="page-link" href="{% my_url audios_page_obj.number 'page' request.GET.urlencode %}">{{audios_page_obj.number}}<span class="sr-only">(current)</span></a></li>
+      {% if audios_page_obj.has_next %}
+        <li class="page-item"><a class="page-link" href="{% my_url audios_page_obj.next_page_number 'page' request.GET.urlencode %}">{{audios_page_obj.next_page_number}}</a></li>
+      {% endif %}
+      <li class="page-item"><a class="page-link" href="{% my_url audios_page_obj.paginator.num_pages 'page' request.GET.urlencode %}">Last</a></li>
+    </ul>
+  </nav>
+  {% else %}
+    <div class="row text-center">
+      <div class="form-group col-md-12">
+        <h3 class="form-group text-primary">No Audios Available</h3>
+      </div>
+    </div>
+  {% endif %}
+</section>
+{% endblock content %}
