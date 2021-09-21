@@ -7,7 +7,8 @@ class FirstTermAdmin(admin.ModelAdmin):
     'uluum_ulquran_exam', 'balaagah_ca', 'balaagah_exam', 'tawheed_ca', 'tawheed_exam',
     'farooid_ca', 'farooid_exam', 'fiqh_ca', 'fiqh_exam', 'taareekh_ca', 'taareekh_exam',
     'hadeeth_ca', 'hadeeth_exam', 'aruud_ca', 'aruud_exam', 'mantiqoh_ca', 'mantiqoh_exam',
-    'tafseer_ca', 'tafseer_exam', 'mustolah_ulhadeeth_ca', 'mustolah_ulhadeeth_exam', 'cumulative']
+    'tafseer_ca', 'tafseer_exam', 'mustolah_ulhadeeth_ca', 'mustolah_ulhadeeth_exam', 'usuul_ca',
+    'usuul_exam', 'cumulative']
     search_fields = ['student__user__username', 'student__classe__name']
     list_filter = ['student__classe__name']
     list_display_links = ['student']

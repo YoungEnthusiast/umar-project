@@ -5,7 +5,8 @@ class FirstTermAdmin(admin.ModelAdmin):
     list_display = ['session', 'student', 'get_classe', 'school_fees', 'quran_ca', 'quran_exam', 'tajweed_ca',
     'tajweed_exam', 'mutoolaah_ca', 'mutoolaah_exam', 'arabiyyah_ca', 'arabiyyah_exam', 'nahw_ca',
     'nahw_exam', 'tawheed_ca', 'tawheed_exam', 'fiqh_ca', 'fiqh_exam', 'seeroh_ca', 'seeroh_exam',
-    'hadeeth_ca', 'hadeeth_exam', 'cumulative']
+    'hadeeth_ca', 'hadeeth_exam', 'nusuus_ca', 'nusuus_exam', 'tabeer_ca', 'tabeer_exam', 'duruusu_ca',
+    'duruusu_exam', 'hadeethulhifz_ca', 'hadeethulhifz_exam', 'cumulative']
     search_fields = ['student__user__username', 'student__classe__name']
     list_filter = ['student__classe__name']
     list_display_links = ['student']

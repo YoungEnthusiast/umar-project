@@ -67,9 +67,14 @@ def updateFirsts(request, id):
             fiqh_tot = reg.fiqh_ca + reg.fiqh_exam
             seeroh_tot = reg.seeroh_ca + reg.seeroh_exam
             hadeeth_tot = reg.hadeeth_ca + reg.hadeeth_exam
-            cumulative = (quran_tot + tajweed_tot + mutoolaah_tot
-            + arabiyyah_tot + nahw_tot + tawheed_tot + fiqh_tot
-            + seeroh_tot + hadeeth_tot
+            nusuus_tot = reg.nusuus_ca + reg.nusuus_exam
+            tabeer_tot = reg.tabeer_ca + reg.tabeer_exam
+            duruusu_tot = reg.duruusu_ca + reg.duruusu_exam
+            hadeethulhifz_tot = reg.hadeethulhifz_ca + reg.hadeethulhifz_exam
+
+            cumulative = (quran_tot + tajweed_tot + mutoolaah_tot + arabiyyah_tot
+            + nahw_tot + tawheed_tot + fiqh_tot + seeroh_tot + hadeeth_tot + nusuus_tot
+            + tabeer_tot + duruusu_tot + hadeethulhifz_tot
             )
             reg.quran_tot = quran_tot
             reg.tajweed_tot = tajweed_tot
@@ -80,6 +85,10 @@ def updateFirsts(request, id):
             reg.fiqh_tot = fiqh_tot
             reg.seeroh_tot = seeroh_tot
             reg.hadeeth_tot = hadeeth_tot
+            reg.nusuus_tot = nusuus_tot
+            reg.tabeer_tot = tabeer_tot
+            reg.duruusu_tot = duruusu_tot
+            reg.hadeethulhifz_tot = hadeethulhifz_tot
             reg.cumulative = cumulative
             reg.teacher_comment = teacher_comment
             reg.head_comment = head_comment
@@ -122,9 +131,14 @@ def addFirst(request, **kwargs):
             fiqh_tot = reg.fiqh_ca + reg.fiqh_exam
             seeroh_tot = reg.seeroh_ca + reg.seeroh_exam
             hadeeth_tot = reg.hadeeth_ca + reg.hadeeth_exam
-            cumulative = (quran_tot + tajweed_tot + mutoolaah_tot
-            + arabiyyah_tot + nahw_tot + tawheed_tot + fiqh_tot
-            + seeroh_tot + hadeeth_tot
+            nusuus_tot = reg.nusuus_ca + reg.nusuus_exam
+            tabeer_tot = reg.tabeer_ca + reg.tabeer_exam
+            duruusu_tot = reg.duruusu_ca + reg.duruusu_exam
+            hadeethulhifz_tot = reg.hadeethulhifz_ca + reg.hadeethulhifz_exam
+
+            cumulative = (quran_tot + tajweed_tot + mutoolaah_tot + arabiyyah_tot
+            + nahw_tot + tawheed_tot + fiqh_tot + seeroh_tot + hadeeth_tot + nusuus_tot
+            + tabeer_tot + duruusu_tot + hadeethulhifz_tot
             )
             reg.quran_tot = quran_tot
             reg.tajweed_tot = tajweed_tot
@@ -135,6 +149,10 @@ def addFirst(request, **kwargs):
             reg.fiqh_tot = fiqh_tot
             reg.seeroh_tot = seeroh_tot
             reg.hadeeth_tot = hadeeth_tot
+            reg.nusuus_tot = nusuus_tot
+            reg.tabeer_tot = tabeer_tot
+            reg.duruusu_tot = duruusu_tot
+            reg.hadeethulhifz_tot = hadeethulhifz_tot
             reg.cumulative = cumulative
             reg.teacher_comment = teacher_comment
             reg.head_comment = head_comment

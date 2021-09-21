@@ -30,7 +30,6 @@
             </div>
             <br>
             {% csrf_token %}
-            {% csrf_token %}
             <div class="form-row">
               <div class="form-group col-sm-12 mb-2">
                 <h3 class="text-primary">Select session and student</h3>
@@ -119,6 +118,38 @@
                 </div>
                 <div class="form-group col-sm-6 mb-2">
                   {{ form.hadeeth_exam|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-6 mb-2">
+                  {{ form.nusuus_ca|as_crispy_field }}
+                </div>
+                <div class="form-group col-sm-6 mb-2">
+                  {{ form.nusuus_exam|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-6 mb-2">
+                  {{ form.tabeer_ca|as_crispy_field }}
+                </div>
+                <div class="form-group col-sm-6 mb-2">
+                  {{ form.tabeer_exam|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-6 mb-2">
+                  {{ form.duruusu_ca|as_crispy_field }}
+                </div>
+                <div class="form-group col-sm-6 mb-2">
+                  {{ form.duruusu_exam|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-6 mb-2">
+                  {{ form.hadeethulhifz_ca|as_crispy_field }}
+                </div>
+                <div class="form-group col-sm-6 mb-2">
+                  {{ form.hadeethulhifz_exam|as_crispy_field }}
                 </div>
             </div>
             <div class="form-row">

@@ -14,6 +14,12 @@ class FirstTerm(models.Model):
     fiqh_ca = models.IntegerField(blank=True, default = 0, verbose_name="الفقه (الإختبار)")
     seeroh_ca = models.IntegerField(blank=True, default = 0, verbose_name="السيرة (الإختبار)")
     hadeeth_ca = models.IntegerField(blank=True, default = 0, verbose_name="الحديث (الإختبار)")
+    nusuus_ca = models.IntegerField(blank=True, default = 0, verbose_name="النصوص (الإختبار)")
+    tabeer_ca = models.IntegerField(blank=True, default = 0, verbose_name="التعبير (الإختبار)")
+    duruusu_ca = models.IntegerField(blank=True, default = 0, verbose_name="دروس اللغة (الإختبار)")
+    hadeethulhifz_ca = models.IntegerField(blank=True, default = 0, verbose_name="حديث الحفظ (الإختبار)")
+
+
     quran_exam = models.IntegerField(blank=True, default = 0, verbose_name="القرآن (الإمتحان)")
     tajweed_exam = models.IntegerField(blank=True, default = 0, verbose_name="التجويد (الإمتحان)")
     mutoolaah_exam = models.IntegerField(blank=True, default = 0, verbose_name="المطالعة (الإمتحان)")
@@ -23,6 +29,10 @@ class FirstTerm(models.Model):
     fiqh_exam = models.IntegerField(blank=True, default = 0, verbose_name="الفقه (الإمتحان)")
     seeroh_exam = models.IntegerField(blank=True, default = 0, verbose_name="السيرة (الإمتحان)")
     hadeeth_exam = models.IntegerField(blank=True, default = 0, verbose_name="الحديث (الإمتحان)")
+    nusuus_exam = models.IntegerField(blank=True, default = 0, verbose_name="النصوص (الإمتحان)")
+    tabeer_exam = models.IntegerField(blank=True, default = 0, verbose_name="التعبير (الإمتحان)")
+    duruusu_exam = models.IntegerField(blank=True, default = 0, verbose_name="دروس اللغة (الإمتحان)")
+    hadeethulhifz_exam = models.IntegerField(blank=True, default = 0, verbose_name="حديث الحفظ (الإمتحان)")
 
     quran_tot = models.IntegerField(blank=True, default = 0)
     tajweed_tot = models.IntegerField(blank=True, default = 0)
@@ -33,6 +43,10 @@ class FirstTerm(models.Model):
     fiqh_tot = models.IntegerField(blank=True, default = 0)
     seeroh_tot = models.IntegerField(blank=True, default = 0)
     hadeeth_tot = models.IntegerField(blank=True, default = 0)
+    nusuus_tot = models.IntegerField(blank=True, default = 0)
+    tabeer_tot = models.IntegerField(blank=True, default = 0)
+    duruusu_tot = models.IntegerField(blank=True, default = 0)
+    hadeethulhifz_tot = models.IntegerField(blank=True, default = 0)
     cumulative = models.IntegerField(blank=True, default = 0)
     teacher_comment = models.CharField(max_length=200, null=True, blank=True, verbose_name="تعليق المدرس")
     head_comment = models.CharField(max_length=200, null=True, blank=True, verbose_name="تعليق المدير")
@@ -176,19 +190,75 @@ class FirstTerm(models.Model):
         else:
             return "A - Excellent"
 
-    def grade_general(self):
-        if self.cumulative/9 < 40:
+    def grade_nusuus(self):
+        if self.nusuus_tot < 40:
             return "F - Fail"
-        elif self.cumulative/9 >= 40 and self.mustolah_ulhadeeth_tot < 45:
+        elif self.nusuus_tot >= 40 and self.nusuus_tot < 45:
             return "E - Weak Pass"
-        elif self.cumulative/9 >= 45 and self.mustolah_ulhadeeth_tot < 50:
+        elif self.nusuus_tot >= 45 and self.nusuus_tot < 50:
             return "D - Fair"
-        elif self.cumulative/9 >= 50 and self.mustolah_ulhadeeth_tot < 60:
+        elif self.nusuus_tot >= 50 and self.nusuus_tot < 60:
             return "C - Good"
-        elif self.cumulative/9 >= 60 and self.mustolah_ulhadeeth_tot < 70:
+        elif self.nusuus_tot >= 60 and self.nusuus_tot < 70:
+            return "B - Very Good"
+        else:
+            return "A - Excellent"
+
+    def grade_tabeer(self):
+        if self.tabeer_tot < 40:
+            return "F - Fail"
+        elif self.tabeer_tot >= 40 and self.tabeer_tot < 45:
+            return "E - Weak Pass"
+        elif self.tabeer_tot >= 45 and self.tabeer_tot < 50:
+            return "D - Fair"
+        elif self.tabeer_tot >= 50 and self.tabeer_tot < 60:
+            return "C - Good"
+        elif self.tabeer_tot >= 60 and self.tabeer_tot < 70:
+            return "B - Very Good"
+        else:
+            return "A - Excellent"
+
+    def grade_duruusu(self):
+        if self.duruusu_tot < 40:
+            return "F - Fail"
+        elif self.duruusu_tot >= 40 and self.duruusu_tot < 45:
+            return "E - Weak Pass"
+        elif self.duruusu_tot >= 45 and self.duruusu_tot < 50:
+            return "D - Fair"
+        elif self.duruusu_tot >= 50 and self.duruusu_tot < 60:
+            return "C - Good"
+        elif self.duruusu_tot >= 60 and self.duruusu_tot < 70:
+            return "B - Very Good"
+        else:
+            return "A - Excellent"
+
+    def grade_hadeethulhifz(self):
+        if self.hadeethulhifz_tot < 40:
+            return "F - Fail"
+        elif self.hadeethulhifz_tot >= 40 and self.hadeethulhifz_tot < 45:
+            return "E - Weak Pass"
+        elif self.hadeethulhifz_tot >= 45 and self.hadeethulhifz_tot < 50:
+            return "D - Fair"
+        elif self.hadeethulhifz_tot >= 50 and self.hadeethulhifz_tot < 60:
+            return "C - Good"
+        elif self.hadeethulhifz_tot >= 60 and self.hadeethulhifz_tot < 70:
+            return "B - Very Good"
+        else:
+            return "A - Excellent"
+
+    def grade_general(self):
+        if self.cumulative/13 < 40:
+            return "F - Fail"
+        elif self.cumulative/13 >= 40 and self.mustolah_ulhadeeth_tot < 45:
+            return "E - Weak Pass"
+        elif self.cumulative/13 >= 45 and self.mustolah_ulhadeeth_tot < 50:
+            return "D - Fair"
+        elif self.cumulative/13 >= 50 and self.mustolah_ulhadeeth_tot < 60:
+            return "C - Good"
+        elif self.cumulative/13 >= 60 and self.mustolah_ulhadeeth_tot < 70:
             return "B - Very Good"
         else:
             return "Excellent"
 
     def cum_perc(self):
-        return str(round((self.cumulative/9),4))
+        return str(round((self.cumulative/13),4))

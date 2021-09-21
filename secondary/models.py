@@ -20,6 +20,7 @@ class FirstTerm(models.Model):
     mantiqoh_ca = models.IntegerField(blank=True, default = 0, verbose_name="المنطقة (الإختبار)")
     tafseer_ca = models.IntegerField(blank=True, default = 0, verbose_name="التفسير (الإختبار)")
     mustolah_ulhadeeth_ca = models.IntegerField(blank=True, default = 0, verbose_name="مصطلح الحديث (الإختبار)")
+    usuul_ca = models.IntegerField(blank=True, default = 0, verbose_name="أصول الفقه (الإختبار)")
 
     quran_exam = models.IntegerField(blank=True, default = 0, verbose_name="القرآن (الإمتحان)")
     tajweed_exam = models.IntegerField(blank=True, default = 0, verbose_name="التجويد (الإمتحان)")
@@ -36,6 +37,7 @@ class FirstTerm(models.Model):
     mantiqoh_exam = models.IntegerField(blank=True, default = 0, verbose_name="المنطقة (الإمتحان)")
     tafseer_exam = models.IntegerField(blank=True, default = 0, verbose_name="التفسير (الإمتحان)")
     mustolah_ulhadeeth_exam = models.IntegerField(blank=True, default = 0, verbose_name="مصطلح الحديث (الإمتحان)")
+    usuul_exam = models.IntegerField(blank=True, default = 0, verbose_name="أصول الفقه (الإمتحان)")
 
     quran_tot = models.IntegerField(blank=True, default = 0)
     tajweed_tot = models.IntegerField(blank=True, default = 0)
@@ -52,6 +54,7 @@ class FirstTerm(models.Model):
     mantiqoh_tot = models.IntegerField(blank=True, default = 0)
     tafseer_tot = models.IntegerField(blank=True, default = 0)
     mustolah_ulhadeeth_tot = models.IntegerField(blank=True, default = 0)
+    usuul_exam = models.IntegerField(blank=True, default = 0)
     cumulative = models.IntegerField(blank=True, default = 0)
     teacher_comment = models.CharField(max_length=200, null=True, blank=True, verbose_name="تعليق المدرس")
     head_comment = models.CharField(max_length=200, null=True, blank=True, verbose_name="تعليق المدير")
@@ -280,20 +283,20 @@ class FirstTerm(models.Model):
             return "A - Excellent"
 
     def grade_general(self):
-        if self.cumulative/15 < 40:
+        if self.cumulative/16 < 40:
             return "F - Fail"
-        elif self.cumulative/15 >= 40 and self.mustolah_ulhadeeth_tot < 45:
+        elif self.cumulative/16 >= 40 and self.mustolah_ulhadeeth_tot < 45:
             return "E - Weak Pass"
-        elif self.cumulative/15 >= 45 and self.mustolah_ulhadeeth_tot < 50:
+        elif self.cumulative/16 >= 45 and self.mustolah_ulhadeeth_tot < 50:
             return "D - Fair"
-        elif self.cumulative/15 >= 50 and self.mustolah_ulhadeeth_tot < 60:
+        elif self.cumulative/16 >= 50 and self.mustolah_ulhadeeth_tot < 60:
             return "C - Good"
-        elif self.cumulative/15 >= 60 and self.mustolah_ulhadeeth_tot < 70:
+        elif self.cumulative/16 >= 60 and self.mustolah_ulhadeeth_tot < 70:
             return "B - Very Good"
         else:
             return "Excellent"
 
     def cum_perc(self):
-        return str(round((self.cumulative/15),4))
+        return str(round((self.cumulative/16),4))
 
 # Create your models here.

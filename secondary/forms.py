@@ -10,7 +10,7 @@ class FirstTermForm(forms.ModelForm):
         'farooid_ca', 'farooid_exam', 'fiqh_ca', 'fiqh_exam', 'taareekh_ca', 'taareekh_exam',
         'hadeeth_ca', 'hadeeth_exam', 'aruud_ca', 'aruud_exam', 'mantiqoh_ca', 'mantiqoh_exam',
         'tafseer_ca', 'tafseer_exam', 'mustolah_ulhadeeth_ca', 'mustolah_ulhadeeth_exam',
-        'teacher_comment', 'head_comment']
+        'usuul_ca', 'usuul_exam', 'teacher_comment', 'head_comment']
 
 class FirstTermFormUp(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -44,4 +44,4 @@ class FirstTermFormUp(forms.ModelForm):
         'farooid_ca', 'farooid_exam', 'fiqh_ca', 'fiqh_exam', 'taareekh_ca', 'taareekh_exam',
         'hadeeth_ca', 'hadeeth_exam', 'aruud_ca', 'aruud_exam', 'mantiqoh_ca', 'mantiqoh_exam',
         'tafseer_ca', 'tafseer_exam', 'mustolah_ulhadeeth_ca', 'mustolah_ulhadeeth_exam',
-        'teacher_comment', 'head_comment']
+        'usuul_ca', 'usuul_exam', 'teacher_comment', 'head_comment']

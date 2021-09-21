@@ -7,7 +7,9 @@ class FirstTermForm(forms.ModelForm):
         fields = ['session', 'student', 'quran_ca', 'quran_exam', 'tajweed_ca', 'tajweed_exam',
         'mutoolaah_ca', 'mutoolaah_exam', 'arabiyyah_ca', 'arabiyyah_exam', 'nahw_ca',
         'nahw_exam', 'tawheed_ca', 'tawheed_exam', 'fiqh_ca', 'fiqh_exam', 'seeroh_ca',
-        'seeroh_exam', 'hadeeth_ca', 'hadeeth_exam', 'teacher_comment', 'head_comment']
+        'seeroh_exam', 'hadeeth_ca', 'hadeeth_exam', 'nusuus_ca', 'nusuus_exam', 'tabeer_ca',
+        'tabeer_exam', 'duruusu_ca', 'duruusu_exam', 'hadeethulhifz_ca', 'hadeethulhifz_exam',
+        'teacher_comment', 'head_comment']
 
 class FirstTermFormUp(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -38,4 +40,6 @@ class FirstTermFormUp(forms.ModelForm):
         fields = ['session', 'student', 'quran_ca', 'quran_exam', 'tajweed_ca', 'tajweed_exam',
         'mutoolaah_ca', 'mutoolaah_exam', 'arabiyyah_ca', 'arabiyyah_exam', 'nahw_ca',
         'nahw_exam', 'tawheed_ca', 'tawheed_exam', 'fiqh_ca', 'fiqh_exam', 'seeroh_ca',
-        'seeroh_exam', 'hadeeth_ca', 'hadeeth_exam', 'teacher_comment', 'head_comment']
+        'seeroh_exam', 'hadeeth_ca', 'hadeeth_exam', 'nusuus_ca', 'nusuus_exam', 'tabeer_ca',
+        'tabeer_exam', 'duruusu_ca', 'duruusu_exam', 'hadeethulhifz_ca', 'hadeethulhifz_exam',
+        'teacher_comment', 'head_comment']

@@ -4237,7 +4237,7 @@ button.close {
   margin-left: 15%;
   list-style: none; }
   .carousel-indicators li {
-    visibility: hidden;;
+    /* visibility: hidden;; */
     position: relative;
     flex: 0 1 auto;
     width: 30px;

@@ -73,10 +73,11 @@ def updateFirsts(request, id):
             mantiqoh_tot = reg.mantiqoh_ca + reg.mantiqoh_exam
             tafseer_tot = reg.tafseer_ca + reg.tafseer_exam
             mustolah_ulhadeeth_tot = reg.mustolah_ulhadeeth_ca + reg.mustolah_ulhadeeth_exam
+            usuul_tot = reg.usuul_ca + reg.usuul_exam
 
             cumulative = (quran_tot + tajweed_tot + nahw_tot + sorf_tot + uluum_ulquran_tot
-            + balaagah_tot + tawheed_tot + farooid_tot + fiqh_tot + taareekh_tot
-            + hadeeth_tot + aruud_tot + mantiqoh_tot + tafseer_tot + mustolah_ulhadeeth_tot
+            + balaagah_tot + tawheed_tot + farooid_tot + fiqh_tot + taareekh_tot + hadeeth_tot
+            + aruud_tot + mantiqoh_tot + tafseer_tot + mustolah_ulhadeeth_tot + usuul_tot
             )
 
             reg.quran_tot = quran_tot
@@ -94,6 +95,7 @@ def updateFirsts(request, id):
             reg.mantiqoh_tot = mantiqoh_tot
             reg.tafseer_tot = tafseer_tot
             reg.mustolah_ulhadeeth_tot = mustolah_ulhadeeth_tot
+            reg.usuul_tot = usuul_tot
             reg.cumulative = cumulative
             reg.teacher_comment = teacher_comment
             reg.head_comment = head_comment
@@ -142,10 +144,11 @@ def addFirst(request, **kwargs):
             mantiqoh_tot = reg.mantiqoh_ca + reg.mantiqoh_exam
             tafseer_tot = reg.tafseer_ca + reg.tafseer_exam
             mustolah_ulhadeeth_tot = reg.mustolah_ulhadeeth_ca + reg.mustolah_ulhadeeth_exam
+            usuul_tot = reg.usuul_ca + reg.usuul_exam
 
             cumulative = (quran_tot + tajweed_tot + nahw_tot + sorf_tot + uluum_ulquran_tot
-            + balaagah_tot + tawheed_tot + farooid_tot + fiqh_tot + taareekh_tot
-            + hadeeth_tot + aruud_tot + mantiqoh_tot + tafseer_tot + mustolah_ulhadeeth_tot
+            + balaagah_tot + tawheed_tot + farooid_tot + fiqh_tot + taareekh_tot + hadeeth_tot
+            + aruud_tot + mantiqoh_tot + tafseer_tot + mustolah_ulhadeeth_tot + usuul_tot
             )
 
             reg.quran_tot = quran_tot
@@ -163,6 +166,7 @@ def addFirst(request, **kwargs):
             reg.mantiqoh_tot = mantiqoh_tot
             reg.tafseer_tot = tafseer_tot
             reg.mustolah_ulhadeeth_tot = mustolah_ulhadeeth_tot
+            reg.usuul_tot = usuul_tot
             reg.cumulative = cumulative
             reg.teacher_comment = teacher_comment
             reg.head_comment = head_comment

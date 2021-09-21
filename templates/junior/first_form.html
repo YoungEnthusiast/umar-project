@@ -26,10 +26,9 @@
           <form method="post" class="form-group col-md-12 text-orange">
             <div class="card-header bg-primary text-orange">
               <h4>
-                <i class="fas fa-edit"></i> Update Scores</h4>
+                <i class="fas fa-edit"></i> Add Scores</h4>
             </div>
             <br>
-            {% csrf_token %}
             {% csrf_token %}
             <div class="form-row">
               <div class="form-group col-sm-12 mb-2">
@@ -119,6 +118,38 @@
                 </div>
                 <div class="form-group col-sm-6 mb-2">
                   {{ form.hadeeth_exam|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-6 mb-2">
+                  {{ form.nusuus_ca|as_crispy_field }}
+                </div>
+                <div class="form-group col-sm-6 mb-2">
+                  {{ form.nusuus_exam|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-6 mb-2">
+                  {{ form.tabeer_ca|as_crispy_field }}
+                </div>
+                <div class="form-group col-sm-6 mb-2">
+                  {{ form.tabeer_exam|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-6 mb-2">
+                  {{ form.duruusu_ca|as_crispy_field }}
+                </div>
+                <div class="form-group col-sm-6 mb-2">
+                  {{ form.duruusu_exam|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-6 mb-2">
+                  {{ form.hadeethulhifz_ca|as_crispy_field }}
+                </div>
+                <div class="form-group col-sm-6 mb-2">
+                  {{ form.hadeethulhifz_exam|as_crispy_field }}
                 </div>
             </div>
             <div class="form-row">
