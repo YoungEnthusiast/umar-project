@@ -254,6 +254,7 @@ img {
 
     .p3 {
       font-family: "Bush Script MT", cursive;
+      font-size:  18px;
     }
 
     .p4 {
@@ -268,6 +269,10 @@ img {
     .p6 {
       font-family: "Times New Roman", Times, serif;
       font-size:  16px;
+    }
+
+    .p7 {
+      font-family: "Bush Script MT", cursive;
     }
 
     @font-face {
