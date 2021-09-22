@@ -17,8 +17,10 @@
 <a href="{% url 'admin_students_first' %}"><i class="fas fa-users fa-1x"></i> Students</a>
 <a href="{% url 'account_ad_first' %}"><i class="fas fa-user-plus fa-1x"></i> Add Student/Staff</a>
 <a href="{% url 'events_first' %}"><i class="fas fa-newspaper fa-1x"></i></i> News</a>
+<a href="{% url 'audios_categories_first' %}"><i class="fas fa-spinner fa-1x"></i></i> Audios' Categories</a>
+<a href="{% url 'audios_first' %}"><strong class="text-orange"><i class="fas fa-volume-up fa-1x"></i> Audios</strong></a>
 <a href="{% url 'categories_first' %}"><i class="fas fa-spinner fa-1x"></i></i> Videos' Categories</a>
-<a href="{% url 'videos_first' %}"><strong class="text-warning"><i class="fas fa-audio fa-1x"></i> Videos</strong></a>
+<a href="{% url 'videos_first' %}"><i class="fas fa-audio fa-1x"></i> Videos</a>
 <a href="{% url 'admin_firsts' %}"><i class="fas fa-signal fa-1x"></i> Scores</a>
 <a href="{% url 'admin_firsts2' %}"><i class="fas fa-puzzle-piece fa-1x"></i> Attitude/Skills</a>
 <a href="{% url 'admin_firsts3' %}"><i class="fas fa-print fa-1x"></i> Reports</a>
@@ -29,7 +31,7 @@
     {% include 'partials/_alerts.html' %}
 
     {% if audios_page_obj %}
-    <h4 class="text-center text-warning">Search by One or Many Fields</h4>
+    <h4 class="text-center text-orange">Search by One or Many Fields</h4>
     <div class="col-md-12">
       <div class="box-element bg-warning" id="form-wrapper">
         <form method="get" class="form-inline text-white">
@@ -48,11 +50,11 @@
         <div class="col-md-12">
           {% if total_audios > 1 %}
           <div class="form-group col-md-12">
-            <h3 class="form-group text-warning">Total Audios: {{total_audios}}</h3>
+            <h3 class="form-group text-orange">Total Audios: {{total_audios}}</h3>
           </div>
           {% else %}
           <div class="form-group col-md-12">
-            <h3 class="form-group text-warning">Total Audio: {{total_audios}}</h3>
+            <h3 class="form-group text-orange">Total Audio: {{total_audios}}</h3>
           </div>
           {% endif %}
           <a href="{% url 'audio_first' %}"><button type="button" class="btn btn-warning text-white col-md-12"><strong><i class="fa fa-plus-circle fa-1x text-white"></i> &nbspAdd New audio</strong></button></a>
@@ -80,7 +82,7 @@
                     <source src="{{ audio.audioURL }}" type="audio/mp4">
                   </audio></td>
                   <td>Yes</td>
-                  <td class="text-center"><a href="audios/update/{{audio.id}}"><button type="button" class="btn btn-sm btn-primary text-warning"><strong><i class="fa fa-edit fa-1x text-white"></i> &nbspModify</strong></button></a></td>
+                  <td class="text-center"><a href="audios/update/{{audio.id}}"><button type="button" class="btn btn-sm btn-primary text-orange"><strong><i class="fa fa-edit fa-1x text-white"></i> &nbspModify</strong></button></a></td>
                   <td class="text-center"><a href="audios/delete/{{audio.id}}"><button type="button" class="btn btn-sm btn-danger text-white"><strong><i class="fa fa-trash fa-1x text-white"></i> &nbspDelete</strong></button></a></td>
                 </tr>
                 {% else %}
@@ -92,7 +94,7 @@
                     <source src="{{ audio.audioURL }}" type="audio/mp4">
                   </audio></td>
                   <td>No</td>
-                  <td class="text-center"><a href="audios/update/{{audio.id}}"><button type="button" class="btn btn-sm btn-primary text-warning"><strong><i class="fa fa-edit fa-1x text-white"></i> &nbspModify</strong></button></a></td>
+                  <td class="text-center"><a href="audios/update/{{audio.id}}"><button type="button" class="btn btn-sm btn-primary text-orange"><strong><i class="fa fa-edit fa-1x text-white"></i> &nbspModify</strong></button></a></td>
                   <td class="text-center"><a href="audios/delete/{{audio.id}}"><button type="button" class="btn btn-sm btn-danger text-white"><strong><i class="fa fa-trash fa-1x text-white"></i> &nbspDelete</strong></button></a></td>
                 </tr>
                 {% endif %}

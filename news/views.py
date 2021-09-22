@@ -44,7 +44,7 @@ def updateEventFirst(request, id):
     new = News.objects.get(id=id)
     form = NewsFormUp(instance=new)
     if request.method=='POST':
-        form = NewsFormUp(request.POST, instance=new)
+        form = NewsFormUp(request.POST, request.FILES, instance=new)
         if form.is_valid():
             form.save()
             messages.success(request, "The news has been modified successfully")
@@ -64,7 +64,7 @@ def deleteEventFirst(request, id):
 def addEvent(request):
     form = NewsForm()
     if request.method == 'POST':
-        form = NewsForm(request.POST or None)
+        form = NewsForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, "The news has been added successfully")

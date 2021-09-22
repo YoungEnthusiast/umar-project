@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 
 {% block title %}
-  <title>Delete Category</title>
+  <title>Delete Subject</title>
 {% endblock title %}
 
 {% block content %}
@@ -11,12 +11,12 @@
   <div class="text-center card bg-warning text-white form-group col-md-9">
     <br>
       {% if user.role == "A---n" %}
-      <h4> <span class="text-danger">CAUTION!</span> Deleting {{category.category}} will affect all the information associated with the category. Do you still wish to continue?</h4>
+      <h4 > <span class="text-danger">CAUTION!</span> Deleting {{new.headline}} will affect all the information associated with the news. Do you still wish to continue?</h4>
       <br>
       <form method="post">
         {% csrf_token %}
         {{ form|crispy }}
-        <input type="submit" class="btn btn-danger" value="Yes, confirm"> <a class="btn btn-outline-light" href="{% url 'audios_categories_first' %}">No, cancel</a>
+        <input type="submit" class="btn btn-danger" value="Yes, confirm"> <a class="btn btn-outline-light" href="{% url 'events_first' %}">No, cancel</a>
       </form>
       {% else %}
       <h2 class="text-center">Access Restricted</h2>

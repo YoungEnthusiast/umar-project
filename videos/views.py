@@ -61,7 +61,7 @@ def updateVideoFirst(request, id):
     video = Video.objects.get(id=id)
     form = VideoFormUp(instance=video)
     if request.method=='POST':
-        form = VideoFormUp(request.POST, instance=video)
+        form = VideoFormUp(request.POST, request.FILES, instance=video)
         if form.is_valid():
             form.save()
             messages.success(request, "The video has been modified successfully")

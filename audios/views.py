@@ -62,12 +62,24 @@ def updateAudioFirst(request, id):
     audio = Audio.objects.get(id=id)
     form = AudioFormUp(instance=audio)
     if request.method=='POST':
-        form = AudioFormUp(request.POST, instance=audio)
+        form = AudioFormUp(request.POST, request.FILES, instance=audio)
         if form.is_valid():
             form.save()
             messages.success(request, "The audio has been modified successfully")
             return redirect('audios_first')
     return render(request, 'audios/audio_update_first.html', {'form': form, 'audio': audio})
+
+@login_required
+def updateCategoryFirst(request, id):
+    category = Category.objects.get(id=id)
+    form = CategoryFormUp(instance=category)
+    if request.method=='POST':
+        form = CategoryFormUp(request.POST, instance=category)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "The category has been modified successfully")
+            return redirect('audios_categories_first')
+    return render(request, 'audios/category_update_first.html', {'form': form})
 
 @login_required
 def deleteAudioFirst(request, id):
@@ -77,6 +89,15 @@ def deleteAudioFirst(request, id):
         obj.delete()
         return redirect('audios_first')
     return render(request, 'audios/audio_confirm_delete.html', {'audio': audio})
+
+@login_required
+def deleteCategoryFirst(request, id):
+    category = Category.objects.get(id=id)
+    obj = get_object_or_404(Category, id=id)
+    if request.method =="POST":
+        obj.delete()
+        return redirect('audios_categories_first')
+    return render(request, 'audios/category_confirm_delete.html', {'category': category})
 
 @login_required
 def addAudio(request):
@@ -90,3 +111,16 @@ def addAudio(request):
         else:
             messages.error(request, "Please review form input fields below")
     return render(request, 'audios/audio_first.html', {'form': form})
+
+@login_required
+def addCategory(request):
+    form = CategoryForm()
+    if request.method == 'POST':
+        form = CategoryForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "The category has been added successfully")
+            return redirect('audios_categories_first')
+        else:
+            messages.error(request, "Please review form input fields below")
+    return render(request, 'audios/category_first.html', {'form': form})
