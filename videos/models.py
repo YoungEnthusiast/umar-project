@@ -2,6 +2,8 @@ from django.db import models
 
 class Category(models.Model):
     category = models.CharField(max_length=25, db_index=True)
+    created = models.DateTimeField(auto_now_add=True, null=True)
+    updated = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ('category',)

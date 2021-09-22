@@ -1,6 +1,6 @@
 import django_filters
 from django_filters import CharFilter, DateFilter
-from .models import Audio
+from .models import Audio, Category
 
 class AudioFilter(django_filters.FilterSet):
     title = CharFilter(field_name='title', lookup_expr='icontains', label='Title')
@@ -14,3 +14,8 @@ class AudioFilter(django_filters.FilterSet):
     def __init__(self, *args, **kwargs):
         super(AudioFilter, self).__init__(*args, **kwargs)
         self.filters['category__type'].label="Category"
+
+class CategoryFilter(django_filters.FilterSet):
+    class Meta:
+        model = Category
+        fields = ['category']

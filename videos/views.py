@@ -1,13 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Category, Video
-from .forms import VideoForm, VideoFormUp#, CategoryForm, CategoryFormUp
+from .forms import VideoForm, VideoFormUp, CategoryForm, CategoryFormUp
 from .filters import VideoFilter, CategoryFilter
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required#, permission_required
 from django.contrib import messages
 
 def showVideos(request, category_slug=None):
-    audios_home = Background.objects.filter(home_page=True)
     context = {}
     videos = Video.objects.all()
     filtered_videos = VideoFilter(
@@ -21,11 +20,10 @@ def showVideos(request, category_slug=None):
     context['videos_page_obj'] = videos_page_obj
     total_videos = filtered_videos.qs.count()
     context['total_videos'] = total_videos
-    context['audios_home'] = audios_home
-    return render(request, 'videos/gallery.html', context=context)
+    return render(request, 'videos/videos.html', context=context)
 
+@login_required
 def showVideosFirst(request, category_slug=None):
-    audios_home = Background.objects.filter(home_page=True)
     context = {}
     videos = Video.objects.all()
     filtered_videos = VideoFilter(
@@ -39,9 +37,9 @@ def showVideosFirst(request, category_slug=None):
     context['videos_page_obj'] = videos_page_obj
     total_videos = filtered_videos.qs.count()
     context['total_videos'] = total_videos
-    context['audios_home'] = audios_home
     return render(request, 'videos/gallery_first.html', context=context)
 
+@login_required
 def showCategoriesFirst(request, category_slug=None):
     context = {}
     categories = Category.objects.all()
@@ -118,7 +116,7 @@ def addCategory(request):
 def addVideo(request):
     form = VideoForm()
     if request.method == 'POST':
-        form = VideoForm(request.POST or None)
+        form = VideoForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, "The video has been added successfully")

@@ -7,7 +7,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 def showEvents(request):
-    audios_home = Background.objects.filter(home_page=True)
     context = {}
     news = News.objects.all()
     filtered_news = NewsFilter(
@@ -21,7 +20,6 @@ def showEvents(request):
     context['news_page_obj'] = news_page_obj
     total_news = filtered_news.qs.count()
     context['total_news'] = total_news
-    context['audios_home'] = audios_home
     return render(request, 'news/events.html', context=context)
 
 @login_required

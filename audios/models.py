@@ -2,15 +2,17 @@ from django.db import models
 from django.conf import settings
 
 class Category(models.Model):
-    type = models.CharField(max_length=25, db_index=True)
+    category = models.CharField(max_length=25, db_index=True)
+    created = models.DateTimeField(auto_now_add=True, null=True)
+    updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ('type',)
+        ordering = ('category',)
         verbose_name = 'category'
         verbose_name_plural = 'categories'
 
     def __str__(self):
-        return str(self.type)
+        return str(self.category)
 
 class Audio(models.Model):
     title = models.CharField(max_length=30, db_index=True, unique=True)
