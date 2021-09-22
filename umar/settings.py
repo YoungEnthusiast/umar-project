@@ -35,6 +35,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -45,16 +47,12 @@ INSTALLED_APPS = [
     'home',
     'audios',
     'videos',
-    'records',
-    'staff',
     'news',
-    'users',
-    'nursery',
     'management',
-    'junior',
-    'secondary',
+    'users',
+    'result',
 ]
-
+SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -91,6 +89,8 @@ MESSAGE_TAGS = {
     messages.SUCCESS: 'success',
 }
 
+AUTH_USER_MODEL = 'users.Person'
+
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
@@ -98,10 +98,6 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'yustaoab@gmail.com'
 EMAIL_HOST_PASSWORD = 'twnqanloovwgjrsq'
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -157,8 +153,14 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'umar/static')]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'index'
+
+LOGIN_REDIRECT_URL = "/where-next/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass

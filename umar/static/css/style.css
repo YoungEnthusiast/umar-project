@@ -4,31 +4,45 @@
 img {
   width: 100%; }
 
-.logo {
-  width: 80px; }
+  .logo {
+    width: 80px; }
 
-.logo2 {
-  width: 180px; }
+  .logo2 {
+    width: 180px; }
 
-.logo3 {
-  width: 158px;
-  height: 158px }
+  .logo3 {
+    width: 158px;
+    height: 158px }
 
-.sig {
-  width: 130px;
-  height: 50px;
- }
+  .profile-small{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px}
 
- .sig2 {
-   width: 200px;
-   height: 110px;
-  }
+  .news-small{
+    width: 40px;
+    height: 40px}
 
-.news_img {
-  width: 50%;
-  height: 50%;
-  }
+  .profile-big{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px}
 
+  .sig {
+    width: 130px;
+    height: 50px;
+   }
+
+   .sig2 {
+     width: 200px;
+     height: 110px;
+    }
+
+  .news_img {
+    width: 50%;
+    height: 50%;
+    }
+    
 .navbar {
   opacity: 0.9;
 }
@@ -183,7 +197,7 @@ img {
     left: 0;
     background-color: ;
     overflow-x: hidden;
-    padding-top: 90px;
+    padding-top: 210px;
     }
 
     /* Style sidebar links */
@@ -273,6 +287,7 @@ img {
 
     .p7 {
       font-family: "Bush Script MT", cursive;
+
     }
 
     @font-face {

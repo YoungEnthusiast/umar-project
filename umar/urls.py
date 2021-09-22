@@ -19,17 +19,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('adm/', admin.site.urls),
     path('', include('home.urls')),
     path('', include('audios.urls')),
     path('', include('videos.urls')),
     path('', include('news.urls')),
     path('', include('users.urls')),
-    path('', include('records.urls')),
-    path('', include('nursery.urls')),
-    path('', include('junior.urls')),
-    path('', include('secondary.urls')),
-    # path('', include('arabiyyah.urls')),
+    path('', include('result.urls')),
+    path('', include('management.urls')),
 ]
 
 if settings.DEBUG:

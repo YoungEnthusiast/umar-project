@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import *
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ['type']
+    list_display = ['category']
 admin.site.register(Category, CategoryAdmin)
 
 class VideoAdmin(admin.ModelAdmin):

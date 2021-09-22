@@ -47,7 +47,7 @@
           <strong class="text-warning">Category: {{video.category}}</strong> <br>
           <a href="{{ video.get_absolute_url }}"><strong class="text-white">Title: {{ video.title }} (Click to view description)</strong></a><br>
           <hr class="text-white">
-          <h6 class="text-white">Uploaded on <strong>{{video.created}}</strong></h6>
+          <h5 class="text-white">Uploaded <strong>{{video.created|timesince}}</strong> ago</h5>
         </div>
       </div>
       {% endfor %}

@@ -2,21 +2,33 @@
 {% load crispy_forms_tags %}
 {% load static %}
 {% block title %}
-  <title>Register</title>
+  <title>Register | Al-Itqān Model Academy</title>
 {% endblock title %}
 
 {% block content %}
-{% for audio in audios_home %}
-<audio width="300" height="300" autoplay loop hidden>
-  <source src="{% if audio.audio %}{{ audio.audio.url }}{% else %}{% static "img/no_video.jpeg" %}{% endif %}" type="audio/mp3" autostart="true" loop="true" hidden="true">
-</audio>
+<br>
+<div class="sidebar">
+<a href="{% url 'admin_board_first' %}"><i class="fas fa-tachometer-alt fa-1x"></i> Dashboard</a>
+<a href="{% url 'profile_admin_first' %}"><i class="fas fa-user-circle fa-1x"></i> Profile</a>
+<a href="{% url 'sessions_first' %}"><i class="fas fa-history fa-1x"></i> Sessions</a>
+<a href="{% url 'classes_first' %}"><i class="fas fa-sitemap fa-1x"></i> Classes</a>
+<a href="{% url 'subjects_first' %}"><i class="fas fa-snowflake fa-1x"></i> Subjects</a>
+<a href="{% url 'staffs_first' %}"><i class="fas fa-user-tie fa-1x"></i> Staff</a>
+<a href="{% url 'admin_students_first' %}"><i class="fas fa-users fa-1x"></i> Students</a>
+<a href="{% url 'account_ad_first' %}"><strong class="text-orange"><i class="fas fa-user-plus fa-1x"></i> Add Student/Staff</strong></a>
+<a href="{% url 'events_first' %}"><i class="fas fa-newspaper fa-1x"></i></i> News</a>
+<a href="{% url 'categories_first' %}"><i class="fas fa-spinner fa-1x"></i></i> Videos' Categories</a>
+<a href="{% url 'videos_first' %}"><i class="fas fa-video fa-1x"></i> Videos</a>
+<a href="{% url 'admin_firsts' %}"><i class="fas fa-signal fa-1x"></i> Scores</a>
+<a href="{% url 'admin_firsts2' %}"><i class="fas fa-puzzle-piece fa-1x"></i> Attitude/Skills</a>
+<a href="{% url 'admin_firsts3' %}"><i class="fas fa-print fa-1x"></i> Reports</a>
+<a href="{% url 'firsts_pay' %}"><i class="fas fa-money-bill-alt fa-1x"></i> Payment</a>
 
-{% endfor %}
-  </br>
+</div>
     <div class="container">
       {% if messages %}
         {% for message in messages %}
-          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <div class="alert alert-orange alert-dismissible fade show" role="alert">
             <h5>{{message}}</h5>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -26,14 +38,66 @@
       {% endif %}
       <div class="card">
         <br>
-        <form method="post" class="form-group col-md-12 text-primary">
-          <div class="card-header bg-primary text-warning">
+        <form method="post" class="form-group col-md-12 text-orange" enctype="multipart/form-data">
+          <div class="card-header bg-primary text-orange">
             <h4>
               <i class="fas fa-user-plus"></i> Register</h4>
           </div>
           <br>
           {% csrf_token %}
-          {{form|crispy}}
+          <div class="form-row">
+              <div class="form-group col-sm-6 mb-2">
+                  {{ form.first_name|as_crispy_field }}
+              </div>
+              <div class="form-group col-sm-6 mb-2">
+                  {{ form.last_name|as_crispy_field }}
+              </div>
+          </div>
+          <div class="form-row">
+              <div class="form-group col-sm-6 mb-2">
+                  {{ form.username|as_crispy_field }}
+              </div>
+              <div class="form-group col-sm-6 mb-2">
+                  {{ form.email|as_crispy_field }}
+              </div>
+          </div>
+          <div class="form-row">
+              <div class="form-group col-sm-6 mb-2">
+                  {{ form.password1|as_crispy_field }}
+              </div>
+              <div class="form-group col-sm-6 mb-2">
+                  {{ form.password2|as_crispy_field }}
+              </div>
+          </div>
+          <div class="form-row">
+              <div class="form-group col-sm-6 mb-2">
+                  {{ form.gender|as_crispy_field }}
+              </div>
+              <div class="form-group col-sm-6 mb-2">
+                  {{ form.dob|as_crispy_field }}
+              </div>
+          </div>
+          <div class="form-row">
+              <div class="form-group col-sm-4 mb-2">
+                  {{ form.role|as_crispy_field }}
+              </div>
+              <div class="form-group col-sm-4 mb-2">
+                  {{ form.classe|as_crispy_field }}
+              </div>
+              <div class="form-group col-sm-4 mb-2">
+                  {{ form.photograph|as_crispy_field }}
+              </div>
+          </div>
+          <div class="form-row">
+              <div class="form-group col-sm-12 mb-2">
+                  {{ form.phone_number|as_crispy_field }}
+              </div>
+          </div>
+          <div class="form-row">
+              <div class="form-group col-sm-12 mb-2">
+                  {{ form.address|as_crispy_field }}
+              </div>
+          </div>
           <input type="submit" class="col-md-12" value="Register">
         </form>
       </div>

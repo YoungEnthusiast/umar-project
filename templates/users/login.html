@@ -20,7 +20,7 @@
       </div>
     {% endfor %}
   {% endif %}
-  <div class="card">
+  <div class="card bg-gold">
 
     <form method="post" class="form-group col-md-12 text-warning">
       <br>
@@ -33,7 +33,7 @@
       {{ form|crispy }}
       <br>
       <input type="submit" class="form-group col-md-12 btn btn-warning pull left" value="Sign In">
-      <span class="text-danger"><i class="fas fa-lock"></i> Forgot Password?<a href="{% url 'reset_password' %}"></span><span class="text-primary"> Reset Here</span></a>
+      <i class="fas fa-lock"></i> Forgot Password?<a href="{% url 'reset_password' %}"><span class="text-primary"> Reset Here</span></a>
     </form>
   </div>
 </div>
