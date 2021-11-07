@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 {% extends 'base2.html' %}
+=======
+{% extends 'base.html' %}
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
 {% load crispy_forms_tags %}
 {% load static %}
 
@@ -48,7 +52,11 @@
           <strong class="text-warning">Category: {{audio.category}}</strong> <br>
           <strong class="text-white">Title: {{ audio.title }}</strong><br>
           <hr class="text-white">
+<<<<<<< HEAD
           <h5 class="text-white">Uploaded <strong>{{audio.created|timesince}}</strong> ago</h6>
+=======
+          <h6 class="text-white">Uploaded on <strong>{{audio.created}}</strong></h6>
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
         </div>
       </div>
       {% endfor %}

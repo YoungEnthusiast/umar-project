@@ -35,8 +35,11 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+<<<<<<< HEAD
     'django.contrib.sites',
     'django.contrib.sitemaps',
+=======
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -47,12 +50,25 @@ INSTALLED_APPS = [
     'home',
     'audios',
     'videos',
+<<<<<<< HEAD
     'news',
     'management',
     'users',
     'result',
 ]
 SITE_ID = 1
+=======
+    'records',
+    'staff',
+    'news',
+    'users',
+    # 'pre_basic',
+    'management',
+    # 'basic',
+    'secondary',
+]
+
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -89,8 +105,11 @@ MESSAGE_TAGS = {
     messages.SUCCESS: 'success',
 }
 
+<<<<<<< HEAD
 AUTH_USER_MODEL = 'users.Person'
 
+=======
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
@@ -98,6 +117,13 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'yustaoab@gmail.com'
 EMAIL_HOST_PASSWORD = 'twnqanloovwgjrsq'
 
+<<<<<<< HEAD
+=======
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -153,14 +179,21 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'umar/static')]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_URL = 'login'
+<<<<<<< HEAD
 
 LOGIN_REDIRECT_URL = "/where-next/"
+=======
+LOGIN_REDIRECT_URL = 'index'
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+<<<<<<< HEAD
 
 try:
     from .local_settings import *
 except ImportError:
     pass
+=======
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9

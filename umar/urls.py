@@ -19,14 +19,26 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+<<<<<<< HEAD
     path('adm/', admin.site.urls),
+=======
+    path('admin/', admin.site.urls),
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
     path('', include('home.urls')),
     path('', include('audios.urls')),
     path('', include('videos.urls')),
     path('', include('news.urls')),
     path('', include('users.urls')),
+<<<<<<< HEAD
     path('', include('result.urls')),
     path('', include('management.urls')),
+=======
+    path('', include('records.urls')),
+    # path('', include('pre_basic.urls')),
+    # path('', include('basic.urls')),
+    path('', include('secondary.urls')),
+    # path('', include('arabiyyah.urls')),
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
 ]
 
 if settings.DEBUG:

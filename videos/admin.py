@@ -2,7 +2,11 @@ from django.contrib import admin
 from .models import *
 
 class CategoryAdmin(admin.ModelAdmin):
+<<<<<<< HEAD
     list_display = ['category']
+=======
+    list_display = ['type']
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
 admin.site.register(Category, CategoryAdmin)
 
 class VideoAdmin(admin.ModelAdmin):

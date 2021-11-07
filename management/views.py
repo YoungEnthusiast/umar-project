@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Session, Class, Subject
 from .forms import SessionForm, SessionFormUp, ClassForm, ClassFormUp, SubjectForm
@@ -167,3 +168,8 @@ def addSubject(request):
             messages.error(request, "Please review form input fields below")
 
     return render(request, 'management/subject_first.html', {'form': form})
+=======
+from django.shortcuts import render
+
+# Create your views here.
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9

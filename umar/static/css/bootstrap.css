@@ -329,7 +329,11 @@ h6, .h6 {
   font-size: 1rem; }
 
 .lead {
+<<<<<<< HEAD
   font-size: 22px;
+=======
+  font-size: 1.25rem;
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
   font-weight: 300; }
 
 .display-1 {
@@ -3056,7 +3060,11 @@ input[type="button"].btn-block {
 .navbar-dark .navbar-nav .active > .nav-link,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .nav-link.active {
+<<<<<<< HEAD
   color: #f28239; }
+=======
+  color: #c2bbda; }
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
 
 .navbar-dark .navbar-toggler {
   color: rgba(255, 255, 255, 0.5);
@@ -4237,7 +4245,11 @@ button.close {
   margin-left: 15%;
   list-style: none; }
   .carousel-indicators li {
+<<<<<<< HEAD
     /* visibility: hidden;; */
+=======
+    visibility: hidden;;
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
     position: relative;
     flex: 0 1 auto;
     width: 30px;

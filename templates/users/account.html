@@ -2,6 +2,7 @@
 {% load crispy_forms_tags %}
 {% load static %}
 {% block title %}
+<<<<<<< HEAD
   <title>Register | Al-Itqān Model Academy</title>
 {% endblock title %}
 
@@ -31,6 +32,23 @@
       {% if messages %}
         {% for message in messages %}
           <div class="alert alert-orange alert-dismissible fade show" role="alert">
+=======
+  <title>Register</title>
+{% endblock title %}
+
+{% block content %}
+{% for audio in audios_home %}
+<audio width="300" height="300" autoplay loop hidden>
+  <source src="{% if audio.audio %}{{ audio.audio.url }}{% else %}{% static "img/no_video.jpeg" %}{% endif %}" type="audio/mp3" autostart="true" loop="true" hidden="true">
+</audio>
+
+{% endfor %}
+  </br>
+    <div class="container">
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
             <h5>{{message}}</h5>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -40,13 +58,19 @@
       {% endif %}
       <div class="card">
         <br>
+<<<<<<< HEAD
         <form method="post" class="form-group col-md-12 text-orange" enctype="multipart/form-data">
           <div class="card-header bg-primary text-orange">
+=======
+        <form method="post" class="form-group col-md-12 text-primary">
+          <div class="card-header bg-primary text-warning">
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
             <h4>
               <i class="fas fa-user-plus"></i> Register</h4>
           </div>
           <br>
           {% csrf_token %}
+<<<<<<< HEAD
           <div class="form-row">
               <div class="form-group col-sm-6 mb-2">
                   {{ form.first_name|as_crispy_field }}
@@ -100,6 +124,9 @@
                   {{ form.address|as_crispy_field }}
               </div>
           </div>
+=======
+          {{form|crispy}}
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
           <input type="submit" class="col-md-12" value="Register">
         </form>
       </div>

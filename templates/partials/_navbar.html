@@ -15,7 +15,11 @@
           class="nav-item mr-3"
         {% endif %}
       >
+<<<<<<< HEAD
         <a class="nav-link lead" href="{% url 'index' %}"><strong>Home</strong></a>
+=======
+        <a class="nav-link" href="{% url 'index' %}"><strong>Home</strong></a>
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
       </li>
       <li
         {% if 'admission' in request.path %}
@@ -24,7 +28,11 @@
           class="nav-item mr-3"
         {% endif %}
       >
+<<<<<<< HEAD
         <a class="nav-link lead" href="{% url 'admission' %}"><strong>Admission</strong></a>
+=======
+        <a class="nav-link" href="{% url 'admission' %}"><strong>Admission</strong></a>
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
       </li>
       <li
         {% if 'audios' in request.path %}
@@ -33,7 +41,11 @@
           class="nav-item mr-3"
         {% endif %}
       >
+<<<<<<< HEAD
         <a class="nav-link lead" href="{% url 'audios' %}"><strong>Audios</strong></a>
+=======
+        <a class="nav-link" href="{% url 'audios' %}"><strong>Audios</strong></a>
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
       </li>
       <li
         {% if 'videos' in request.path %}
@@ -42,7 +54,11 @@
           class="nav-item mr-3"
         {% endif %}
       >
+<<<<<<< HEAD
         <a class="nav-link lead" href="{% url 'videos' %}"><strong>Videos</strong></a>
+=======
+        <a class="nav-link" href="{% url 'videos' %}"><strong>Videos</strong></a>
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
       </li>
       <li
         {% if 'news-and-events' in request.path %}
@@ -51,7 +67,11 @@
           class="nav-item mr-3"
         {% endif %}
       >
+<<<<<<< HEAD
         <a class="nav-link lead" href="{% url 'events' %}"><strong>News and Events</strong></a>
+=======
+        <a class="nav-link" href="{% url 'events' %}"><strong>News and Events</strong></a>
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
       </li>
       <li
         {% if 'about' in request.path %}
@@ -60,7 +80,11 @@
           class="nav-item mr-3"
         {% endif %}
       >
+<<<<<<< HEAD
         <a class="nav-link lead" href="{% url 'about' %}"><strong>About</strong></a>
+=======
+        <a class="nav-link" href="{% url 'about' %}"><strong>About</strong></a>
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
       </li>
       <li
         {% if 'contact' in request.path %}
@@ -69,6 +93,7 @@
           class="nav-item mr-3"
         {% endif %}
       >
+<<<<<<< HEAD
         <a class="nav-link lead" href="{% url 'contact' %}"><strong>Contact</strong></a>
       </li>
       {% if user.is_authenticated == False %}
@@ -88,6 +113,12 @@
 
     <ul class="navbar-nav ml-auto">
       {% if user.is_authenticated and user.role == "Staff" %}
+=======
+        <a class="nav-link" href="{% url 'contact' %}"><strong>Contact</strong></a>
+      </li>
+
+      {% if user.is_authenticated %}
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
       <li
         {% if 'staff' in request.path %}
           class="nav-item active dropdown mr-3"
@@ -95,6 +126,7 @@
           class="nav-item dropdown mr-3"
         {% endif %}
       >
+<<<<<<< HEAD
         <a class="nav-link lead dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {% if user.photograph %}
             <img src="{{ user.photograph.url }}" alt="Teacher's Photograph" class="profile-small">
@@ -116,11 +148,60 @@
       {% elif user.is_authenticated and user.role == "Student" %}
       <li
         {% if 'student' in request.path %}
+=======
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>Staff's Portal</strong></a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#"><strong>Senior Secondary الثانوي</strong></a>
+            <ul class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'secondary_firsts' %}"><strong>First Term</strong></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href=""><strong>Second Term</strong></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href=""><strong>Third Term</strong></a>
+            </ul>
+          </li>
+          <div class="dropdown-divider"></div>
+          <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#"><strong>Arabiyyah</strong></a>
+            <ul class="dropdown-menu">
+              <a class="dropdown-item" href=""><strong>First Term</strong></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href=""><strong>Second Term</strong></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href=""><strong>Third Term</strong></a>
+            </ul>
+          </li>
+          <div class="dropdown-divider"></div>
+          <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#"><strong>Basic</strong></a>
+            <ul class="dropdown-menu">
+              <a class="dropdown-item" href=""><strong>First Term</strong></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href=""><strong>Second Term</strong></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href=""><strong>Third Term</strong></a>
+            </ul>
+          </li>
+          <div class="dropdown-divider"></div>
+          <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#"><strong>Pre-Basic</strong></a>
+            <ul class="dropdown-menu">
+              <a class="dropdown-item" href=""><strong>First Term</strong></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href=""><strong>Second Term</strong></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href=""><strong>Third Term</strong></a>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li
+        {% if 'parents' in request.path %}
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
           class="nav-item active dropdown mr-3"
         {% else %}
           class="nav-item dropdown mr-3"
         {% endif %}
       >
+<<<<<<< HEAD
         <a class="nav-link lead dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
             {% if user.photograph %}
@@ -170,17 +251,106 @@
       {% endif %}
       {% if user.is_authenticated %}
       <li
+=======
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>Parents' Portal</strong></a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#"><strong>Senior Secondary الثانوي</strong></a>
+            <ul class="dropdown-menu">
+              <a class="dropdown-item" href=""><strong>First Term</strong></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href=""><strong>Second Term</strong></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href=""><strong>Third Term</strong></a>
+            </ul>
+          </li>
+          <div class="dropdown-divider"></div>
+          <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#"><strong>Arabiyyah</strong></a>
+            <ul class="dropdown-menu">
+              <a class="dropdown-item" href=""><strong>First Term</strong></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href=""><strong>Second Term</strong></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href=""><strong>Third Term</strong></a>
+            </ul>
+          </li>
+          <div class="dropdown-divider"></div>
+          <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#"><strong>Basic</strong></a>
+            <ul class="dropdown-menu">
+              <a class="dropdown-item" href=""><strong>First Term</strong></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href=""><strong>Second Term</strong></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href=""><strong>Third Term</strong></a>
+            </ul>
+          </li>
+          <div class="dropdown-divider"></div>
+          <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#"><strong>Pre-Basic</strong></a>
+            <ul class="dropdown-menu">
+              <a class="dropdown-item" href=""><strong>First Term</strong></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href=""><strong>Second Term</strong></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href=""><strong>Third Term</strong></a>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      {% else %}
+      <li
+        {% if 'login' in request.path %}
+          class="nav-item active mr-3"
+        {% else %}
+          class="nav-item mr-3"
+        {% endif %}
+      >
+        <a class="nav-link" href="{% url 'login' %}">
+          <i class="fas fa-key"></i> <strong>Staff/Parents' Login</strong></a>
+      </li>
+      {% endif %}
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      {% if user.is_authenticated %}
+      <li
+      >
+        <a class="nav-link" href=""><strong><span class="text-white"><i class="fas fa-user-tie fa-1x"></i> {{user.first_name}}</span></strong></a>
+      </li>
+      <li
+        {% if 'edit-profile' in request.path %}
+          class="nav-item active mr-3"
+        {% else %}
+          class="nav-item mr-3"
+        {% endif %}
+      >
+        <a class="nav-link" href="{% url 'edit_profile' %}"><strong><i class="fas fa-edit fa-1x"></i> Edit Profile</strong></a>
+      </li>
+      <li
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
         {% if 'logout' in request.path %}
           class="nav-item active mr-3"
         {% else %}
           class="nav-item mr-3"
         {% endif %}
       >
+<<<<<<< HEAD
         <button class="btn btn-outline-primary btn-sm"><a class="nav-link lead" href="{% url 'logout' %}">
           <i class="fas fa-sign-out-alt text-primary"></i> <strong class="text-primary">Logout</strong></a></button>
       </li>
       {% endif %}
 
+=======
+        <button class="btn btn-outline-primary btn-sm"><a class="nav-link" href="{% url 'logout' %}">
+          <i class="fas fa-sign-out-alt text-primary"></i> <strong class="text-primary">Logout</strong></a></button>
+      </li>
+    {% else %}
+      <li
+        {% if 'account' in request.path %}
+          class="nav-item active mr-3"
+        {% else %}
+          class="nav-item mr-3"
+        {% endif %}
+      >
+    {% endif %}
+>>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
     </ul>
 
   </div>
