@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Category, Video
 from .forms import VideoForm, VideoFormUp, CategoryForm, CategoryFormUp
@@ -7,8 +6,6 @@ from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required#, permission_required
 from django.contrib import messages
 
-def showVideos(request, category_slug=None):
-=======
 from django.shortcuts import render
 from .models import Category, Video
 from .filters import VideoFilter
@@ -16,7 +13,6 @@ from django.core.paginator import Paginator
 from .models import Video
 
 def showVideos(request):
->>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
     context = {}
     videos = Video.objects.all()
     filtered_videos = VideoFilter(
@@ -31,7 +27,6 @@ def showVideos(request):
     total_videos = filtered_videos.qs.count()
     context['total_videos'] = total_videos
     return render(request, 'videos/videos.html', context=context)
-<<<<<<< HEAD
 
 @login_required
 def showVideosFirst(request, category_slug=None):
@@ -135,5 +130,3 @@ def addVideo(request):
         else:
             messages.error(request, "Please review form input fields below")
     return render(request, 'videos/video_first.html', {'form': form})
-=======
->>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9

@@ -1,4 +1,4 @@
-{% extends 'base2.html' %}
+{% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% load static %}
 
@@ -48,7 +48,7 @@
           <strong class="text-warning">Category: {{audio.category}}</strong> <br>
           <strong class="text-white">Title: {{ audio.title }}</strong><br>
           <hr class="text-white">
-          <h5 class="text-white">Uploaded <strong>{{audio.created|timesince}}</strong> ago</h6>
+          <h5 class="text-white">Uploaded <strong>{{audio.created|timesince}}</strong> ago</h5>
         </div>
       </div>
       {% endfor %}

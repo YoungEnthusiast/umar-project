@@ -4,7 +4,6 @@
 img {
   width: 100%; }
 
-<<<<<<< HEAD
   .logo {
     width: 80px; }
 
@@ -88,7 +87,6 @@ img {
 .bg-light_blue {
   background-color: #1aafd0 !important; }
 
-<<<<<<< HEAD
 .text-light_blue {
   color: #00a7c9 !important; }
 
@@ -233,11 +231,8 @@ img {
     left: 0;
     background-color: ;
     overflow-x: hidden;
-<<<<<<< HEAD
     padding-top: 210px;
-=======
     padding-top: 90px;
->>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
     }
 
     /* Style sidebar links */
@@ -308,10 +303,7 @@ img {
 
     .p3 {
       font-family: "Bush Script MT", cursive;
-<<<<<<< HEAD
       font-size:  18px;
-=======
->>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
     }
 
     .p4 {
@@ -328,14 +320,12 @@ img {
       font-size:  16px;
     }
 
-<<<<<<< HEAD
     .p7 {
       font-family: "Bush Script MT", cursive;
 
     }
 
 =======
->>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
     @font-face {
     font-family: myFont;
     src: url("/includes/fonts/CSDiwany4S_Inormal.ttf");

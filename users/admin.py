@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models import Person
-<<<<<<< HEAD
 from .forms import CustomRegisterForm
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
@@ -29,12 +28,10 @@ class PersonAdmin(UserAdmin):
             'fields': ('username', 'password1', 'password2', 'first_name', 'last_name', 'classe', 'subject', 'email', 'phone_number', 'gender', 'role', 'subject', 'photograph', 'address', 'dob')}
         ),
     )
-=======
 
 class PersonAdmin(admin.ModelAdmin):
-    list_display = ['user', 'classe']
+    list_display = ['classe']
     # search_fields = ['user__username', 'user__first_name', 'user__last_name']
     # list_per_page = 10
 
->>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
 admin.site.register(Person, PersonAdmin)

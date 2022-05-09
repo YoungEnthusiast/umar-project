@@ -1,5 +1,5 @@
 from django.db import models
-<<<<<<< HEAD
+
 #from django.contrib.auth.models import User
 class Session(models.Model):
     session = models.CharField(max_length=20, blank=True, null=True)
@@ -10,14 +10,7 @@ class Session(models.Model):
     first_report = models.BooleanField(max_length=5, default = False, verbose_name="Open 1st Term Report")
     second_report = models.BooleanField(max_length=5, default = False, verbose_name="Open 2nd Term Report")
     third_report = models.BooleanField(max_length=5, default = False, verbose_name="Open 3rd Term Report")
-=======
 
-class Session(models.Model):
-    name = models.CharField(max_length=20, blank=True, null=True)
-    next = models.DateField(blank=True, null=True, verbose_name="Next Term Begins")
-    head = models.CharField(max_length=40, blank=True, null=True, verbose_name="Headmaster's Name")
-    school = models.ImageField(upload_to='stamp_img/%Y/%m/%d', null=True, blank=True, verbose_name="School's Stamp with Head of Schools Signature")
->>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
     created = models.DateTimeField(auto_now_add=True, null=True)
     updated = models.DateTimeField(auto_now=True, null=True)
 
@@ -25,7 +18,7 @@ class Session(models.Model):
         ordering = ('-created',)
 
     def __str__(self):
-<<<<<<< HEAD
+
         return str(self.session)
 
     @property
@@ -48,9 +41,9 @@ class Class(models.Model):
             return str(self.classe)
         except:
             return str(self.id)
-=======
+
         return str(self.name)
->>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
+
 
     @property
     def imageURL(self):
@@ -59,7 +52,7 @@ class Class(models.Model):
         except:
             url = ''
         return url
-<<<<<<< HEAD
+
 
     class Meta:
         ordering = ('classe',)
@@ -84,5 +77,3 @@ class Subject(models.Model):
         ordering = ('-created',)
         # verbose_name = 'Class'
         # verbose_name_plural = 'Classes'
-=======
->>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9

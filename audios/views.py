@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Category, Audio
 from .forms import AudioForm, AudioFormUp, CategoryForm, CategoryFormUp
@@ -7,13 +6,11 @@ from django.core.paginator import Paginator
 from .models import Audio
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-=======
 from django.shortcuts import render
 from .models import Category, Audio
 from .filters import AudioFilter
 from django.core.paginator import Paginator
 from .models import Audio
->>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
 
 def showAudios(request):
     context = {}
@@ -30,7 +27,6 @@ def showAudios(request):
     total_audios = filtered_audios.qs.count()
     context['total_audios'] = total_audios
     return render(request, 'audios/audios.html', context=context)
-<<<<<<< HEAD
 
 @login_required
 def showAudiosFirst(request, category_slug=None):
@@ -133,5 +129,3 @@ def addCategory(request):
         else:
             messages.error(request, "Please review form input fields below")
     return render(request, 'audios/category_first.html', {'form': form})
-=======
->>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9

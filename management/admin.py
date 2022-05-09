@@ -1,5 +1,5 @@
 from django.contrib import admin
-<<<<<<< HEAD
+
 from .models import Session, Class, Subject
 
 class SessionAdmin(admin.ModelAdmin):
@@ -27,14 +27,3 @@ class SubjectAdmin(admin.ModelAdmin):
     list_per_page = 10
 
 admin.site.register(Subject, SubjectAdmin)
-=======
-from .models import *
-
-class SessionAdmin(admin.ModelAdmin):
-    list_display = ['name', 'next', 'head', 'school']
-    search_fields = ['name']
-    list_display_links = ['name', 'school']
-    list_per_page = 10
-
-admin.site.register(Session, SessionAdmin)
->>>>>>> 221184f680b28065f815f25d581c3bf78f22eef9
